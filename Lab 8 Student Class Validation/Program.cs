@@ -11,16 +11,21 @@ namespace Lab_8_Student_Class_Validation
         static void Main(string[] args)
         {
             List<string> studenNames = new List<string> { "Andrew", "Chuck", "Jeremy", "Jon", "Joseph", "Justin", "Katie", "Kelsey", "Sean", "Tommy" };
+            List<string> homeTown = new List<string> { "Grand Haven", "Ripon", "Milwaukee", "Alger", "Grand Rapids", "Wyoming", "Grand Rapids", "Grand Rapids", "Grand Rapids",  "Raleigh"};
+            List<string> favFood = new List<string> { "Chicken Wings", "Almonds", "Peanut Butter", "Tres Leches", "Burritos", "Burgers", "Indian Cuisine", "Grits", "BBQ", "Buttered Chicken"};
+            List<int> favNum = new List<int> {911, 209, 10, 100, 5, 2, 12, 616, 32, 0};
             do
             {
                 Console.Write("Welcome to our C# class. Which student would you like to learn more about? \nEnter Student # 1-10: ");
                 string studentNum = IsNumber(Console.ReadLine());
                 int index = int.Parse(studentNum);
 
-                Console.WriteLine($"Student {index} is {studenNames[index -1]}, would you like to learn more about {studenNames[index - 1]}? \n(Hometown, Favorite Food, Favorite Number): ");
+                Console.WriteLine($"Student number {index} is {studenNames[index -1]}, would you like to learn more about {studenNames[index - 1]}? \n(Hometown, Favorite Food, Favorite Number): ");
                 string choice = "o";
 
-
+                Console.WriteLine($"{studenNames[index - 1]}'s Home Town is {homeTown[index - 1]}");
+                Console.WriteLine($"{studenNames[index - 1]}'s Favorite Food is {favFood[index -1]}");
+                Console.WriteLine($"{studenNames[index - 1]}'s Favorite Number is {favNum[index - 1]}");
             } while (Continue());
         }
         public static bool Continue()
@@ -90,6 +95,10 @@ namespace Lab_8_Student_Class_Validation
             return input; 
         }
         public static bool IsInRange()
+        {
+            return true;
+        }
+        public static bool ValidChoice(string input)
         {
             return true;
         }
