@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab 8 Student Class Validation", "Lab 8 Student Class Validation\Lab 8 Student Class Validation.csproj", "{26525BE4-6158-48C7-87E8-9409D255FEB6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{26525BE4-6158-48C7-87E8-9409D255FEB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26525BE4-6158-48C7-87E8-9409D255FEB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26525BE4-6158-48C7-87E8-9409D255FEB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26525BE4-6158-48C7-87E8-9409D255FEB6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {205CD3CB-2734-4E39-B984-9A75977003A7}
+	EndGlobalSection
+EndGlobal

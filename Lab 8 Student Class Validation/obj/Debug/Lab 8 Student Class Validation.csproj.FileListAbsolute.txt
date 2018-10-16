@@ -1,0 +1,7 @@
+C:\Users\GC Student\Source\Repos\Lab 8 Student Class Validation\Lab 8 Student Class Validation\bin\Debug\Lab 8 Student Class Validation.exe.config
+C:\Users\GC Student\Source\Repos\Lab 8 Student Class Validation\Lab 8 Student Class Validation\bin\Debug\Lab 8 Student Class Validation.exe
+C:\Users\GC Student\Source\Repos\Lab 8 Student Class Validation\Lab 8 Student Class Validation\bin\Debug\Lab 8 Student Class Validation.pdb
+C:\Users\GC Student\Source\Repos\Lab 8 Student Class Validation\Lab 8 Student Class Validation\obj\Debug\Lab 8 Student Class Validation.csprojAssemblyReference.cache
+C:\Users\GC Student\Source\Repos\Lab 8 Student Class Validation\Lab 8 Student Class Validation\obj\Debug\Lab 8 Student Class Validation.csproj.CoreCompileInputs.cache
+C:\Users\GC Student\Source\Repos\Lab 8 Student Class Validation\Lab 8 Student Class Validation\obj\Debug\Lab 8 Student Class Validation.exe
+C:\Users\GC Student\Source\Repos\Lab 8 Student Class Validation\Lab 8 Student Class Validation\obj\Debug\Lab 8 Student Class Validation.pdb
