@@ -17,7 +17,7 @@ namespace Lab_8_Student_Class_Validation
                 string studentNum = IsNumber(Console.ReadLine());
                 int index = int.Parse(studentNum);
 
-                Console.WriteLine($"Student {index} is {studenNames[index -1]}, would you like to learn more about {studenNames[index - 1]}? \n(Hometown/Favorite Food/Favorite Number): ");
+                Console.WriteLine($"Student {index} is {studenNames[index -1]}, would you like to learn more about {studenNames[index - 1]}? \n(Hometown, Favorite Food, Favorite Number): ");
                 string choice = "o";
 
 
@@ -84,7 +84,7 @@ namespace Lab_8_Student_Class_Validation
                 {
                     Console.WriteLine(e.Message);
                     Console.Write("Please Try again: ");
-                    IsNumber(Console.ReadLine());
+                    input = IsNumber(Console.ReadLine());
                 }
             }
             return input; 
