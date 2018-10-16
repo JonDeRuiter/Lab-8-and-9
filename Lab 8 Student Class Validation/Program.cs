@@ -21,11 +21,22 @@ namespace Lab_8_Student_Class_Validation
                 int index = int.Parse(studentNum);
 
                 Console.WriteLine($"Student number {index} is {studenNames[index -1]}, would you like to learn more about {studenNames[index - 1]}? \n(Hometown, Favorite Food, Favorite Number): ");
-                string choice = "o";
+                string choice = ValidChoice(Console.ReadLine());
 
-                Console.WriteLine($"{studenNames[index - 1]}'s Home Town is {homeTown[index - 1]}");
-                Console.WriteLine($"{studenNames[index - 1]}'s Favorite Food is {favFood[index -1]}");
-                Console.WriteLine($"{studenNames[index - 1]}'s Favorite Number is {favNum[index - 1]}");
+                if (choice == "hometown")
+                {
+                    Console.WriteLine($"{studenNames[index - 1]}'s Hometown is {homeTown[index - 1]}");
+                }
+                else if (choice == "favorite food")
+                {
+                    Console.WriteLine($"{studenNames[index - 1]}'s Favorite Food is {favFood[index - 1]}");
+                }
+                else
+                {
+                    Console.WriteLine($"{studenNames[index - 1]}'s Favorite Number is {favNum[index - 1]}");
+                }
+               
+                
             } while (Continue());
         }
         public static bool Continue()
@@ -94,13 +105,27 @@ namespace Lab_8_Student_Class_Validation
             }
             return input; 
         }
-        public static bool IsInRange()
+        public static string ValidChoice(string input)
         {
-            return true;
-        }
-        public static bool ValidChoice(string input)
-        {
-            return true;
+            try
+            {
+                input = input.ToLower();
+                if (input == "hometown" || input == "favorite food" || input == "favorite number")
+                {
+                    return input;
+                }
+                else 
+                {
+                    throw new Exception($"You entered: {input}. Only Hometown, Favorite Food, or Favorite Number available.");
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.Write("Please try again: ");
+                input = ValidChoice(Console.ReadLine());
+            }
+            return input;
         }
     }
 }
