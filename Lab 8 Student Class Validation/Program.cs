@@ -13,11 +13,14 @@ namespace Lab_8_Student_Class_Validation
             List<string> studenNames = new List<string> { "Andrew", "Chuck", "Jeremy", "Jon", "Joseph", "Justin", "Katie", "Kelsey", "Sean", "Tommy" };
             do
             {
-                Console.Write("Welcome to our C# class. Which student would you like to learn more about? \nEnter Student # 1-16: ");
+                Console.Write("Welcome to our C# class. Which student would you like to learn more about? \nEnter Student # 1-10: ");
                 string studentNum = IsNumber(Console.ReadLine());
                 int index = int.Parse(studentNum);
 
-                Console.WriteLine(studenNames[index]);
+                Console.WriteLine($"Student {index} is {studenNames[index -1]}, would you like to learn more about {studenNames[index - 1]}? \n(Hometown/Favorite Food/Favorite Number): ");
+                string choice = "o";
+
+
             } while (Continue());
         }
         public static bool Continue()
@@ -44,9 +47,10 @@ namespace Lab_8_Student_Class_Validation
         }
         public static string NotEmpy(string input)
         {
+            input = input.Trim();
             try
             {
-                if (!(input == null || input == ""))
+                if (input == null || input == "")
                 {
                     throw new Exception("Input is empty, Please enter a number");
                 }
@@ -54,37 +58,40 @@ namespace Lab_8_Student_Class_Validation
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                Console.Write("Please enter a number 1-16: ");
-                NotEmpy(input);           
+                Console.Write("Please enter a number 1-10: ");
+                input = NotEmpy(Console.ReadLine());           
             }
             return input;
         }
         public static string IsNumber(string input)
         {
-            NotEmpy(input);
+            input = NotEmpy(input);
             char[] inputArray = input.ToCharArray();
             foreach (char i in inputArray)
             {
                 try
                 {
-                    if (char.IsDigit(i))
+                    if (char.IsDigit(i) )
                     {
                         return input;
                     }
                     else
                     {
-                        throw new Exception($"Your input, {input}, needs to be a number. ");
+                        throw new Exception($"Your input, {input}, needs to be a number between 1 and 10. ");
                     }
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
-                    Console.Write("Please Try again (1-16): ");
+                    Console.Write("Please Try again: ");
                     IsNumber(Console.ReadLine());
                 }
             }
-            
-
+            return input; 
+        }
+        public static bool IsInRange()
+        {
+            return true;
         }
     }
 }
