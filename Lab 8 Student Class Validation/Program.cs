@@ -31,7 +31,7 @@ namespace Lab_8_Student_Class_Validation
                     {
                         Console.WriteLine($"Which student would you like to learn about? (1-{studenNames.Count})");
                         string studentNum = Console.ReadLine();
-                        tryAgain = IsNumber(studentNum, numOfStudents);
+                        tryAgain = IsNumber(ref studentNum, numOfStudents);
                         index = int.Parse(studentNum);
                         goOn = InRange(index, numOfStudents);
 
@@ -66,15 +66,13 @@ namespace Lab_8_Student_Class_Validation
                     string food = IsName(Console.ReadLine());
                     Console.Write($"Please enter a Favorite Number for {name}: ");
                     string newNum = Console.ReadLine();
-                    IsNumber(newNum, int.MaxValue);
+                    IsNumber(ref newNum, int.MaxValue);
                     int niceNum = int.Parse(newNum);
                     studenNames.Add(name);
                     homeTown.Add(home);
                     favFood.Add(food);
                     favNum.Add(niceNum);
-                }
-               
-                
+                }                              
             } while (Continue());
         }
         public static string AddLearn(string input)
@@ -136,21 +134,23 @@ namespace Lab_8_Student_Class_Validation
             }
             return input;
         }
-        public static bool IsNumber(string input, int x)
+        public static bool IsNumber(ref string input, int x)
         {
             input = NotEmpy(input);
             char[] inputArray = input.ToCharArray();
-            foreach (char i in inputArray)
-            {
+            
                 try
                 {
-                    if (char.IsDigit(i) )
+                    foreach (char i in inputArray)
                     {
-                        return true;
-                    }
-                    else
-                    {
-                        throw new Exception($"Your input, {input}, needs to be a number between 1 and {x}. ");
+                        if (char.IsDigit(i))
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            throw new Exception($"Your input, {input}, needs to be a number between 1 and {x}. ");
+                        }
                     }
                 }
                 catch (Exception e)
@@ -158,9 +158,9 @@ namespace Lab_8_Student_Class_Validation
                     Console.WriteLine(e.Message);
                     Console.Write("Please Try again: ");
                     input = Console.ReadLine();
-                    IsNumber(input, x);
+                    IsNumber(ref input, x);
                 }
-            }
+            
             return true; 
         }
         public static string ValidChoice(string input)
