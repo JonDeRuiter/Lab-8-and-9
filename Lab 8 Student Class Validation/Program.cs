@@ -63,7 +63,7 @@ namespace Lab_8_Student_Class_Validation
                     Console.Write($"Please enter a Hometown for {name}: ");
                     string home = IsName(Console.ReadLine());
                     Console.Write($"Please enter a Favorite Food for {name}: ");
-                    string food = IsName(Console.ReadLine());
+                    string food = IsABC(Console.ReadLine());
                     Console.Write($"Please enter a Favorite Number for {name}: ");
                     string newNum = Console.ReadLine();
                     IsNumber(ref newNum, int.MaxValue);
@@ -233,6 +233,31 @@ namespace Lab_8_Student_Class_Validation
             }
             return input;
             
+        }
+        public static string IsABC(string input)
+        {
+            char[] charArray = input.ToCharArray();
+            try
+            {
+                for (int i = 0; i < input.Length; i++)
+                {
+                    if (!(char.IsLetter(charArray[i])))
+                    {
+                        throw new Exception("This value may only contain letters.");
+                    }
+                    else
+                    {
+                        return input;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.Write("Please try again: ");
+                input = IsABC(Console.ReadLine());                
+            }
+            return input;
         }
     }
 }
